@@ -20,11 +20,10 @@ public class EventControllerTest {
 	MockMvc	mockMvc;
 
 	@Test
-	void createEvent() throws Exception {
+	public void createEvent() throws Exception {
 		mockMvc.perform(post("/api/events/")
 				.contentType(MediaType.APPLICATION_JSON_UTF8)
-				.accept(MediaTypes.HAL_JSON)
-				)
+				.accept(MediaTypes.HAL_JSON))
 			.andExpect(status().isCreated());
 	}
 }
